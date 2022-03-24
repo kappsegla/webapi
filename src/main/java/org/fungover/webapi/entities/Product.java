@@ -1,4 +1,4 @@
-package org.fungover.webapi;
+package org.fungover.webapi.entities;
 
 import javax.persistence.*;
 
