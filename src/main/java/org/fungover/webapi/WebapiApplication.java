@@ -1,7 +1,7 @@
 package org.fungover.webapi;
 
 import org.fungover.webapi.entities.User;
-import org.fungover.webapi.repositories.UserEntityRepository;
+import org.fungover.webapi.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ public class WebapiApplication {
     }
 
     @Bean
-    public CommandLineRunner setUp(UserEntityRepository entityRepository, PasswordEncoder passwordEncoder){
+    public CommandLineRunner setUp(UserRepository entityRepository, PasswordEncoder passwordEncoder){
         return (args)->{
             if (entityRepository.findByName("admin") == null){
                 var user = new User();

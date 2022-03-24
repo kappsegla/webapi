@@ -1,7 +1,7 @@
 package org.fungover.webapi;
 
 import org.fungover.webapi.entities.User;
-import org.fungover.webapi.repositories.UserEntityRepository;
+import org.fungover.webapi.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,9 +15,9 @@ import java.util.List;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
-    private final UserEntityRepository userEntityRepository;
+    private final UserRepository userEntityRepository;
 
-    public MyUserDetailsService(UserEntityRepository userEntityRepository) {
+    public MyUserDetailsService(UserRepository userEntityRepository) {
         this.userEntityRepository = userEntityRepository;
     }
 
