@@ -34,4 +34,25 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
                 .and().build();
     }
+
+/*
+    private static final RequestMatcher PUBLIC_URLS = new OrRequestMatcher(
+            new AntPathRequestMatcher("/"), new AntPathRequestMatcher("/open/**")
+    );
+    private static final RequestMatcher PROTECTED_URLS = new NegatedRequestMatcher(PUBLIC_URLS);
+
+      .exceptionHandling()
+      .defaultAuthenticationEntryPointFor(forbiddenEntryPoint(), PROTECTED_URLS)
+            .and()
+      .authenticationProvider(provider)
+      .addFilterBefore(restAuthenticationFilter(), AnonymousAuthenticationFilter.class)
+            .authorizeRequests()
+      .requestMatchers(PROTECTED_URLS)
+      .authenticated()
+      .and()
+      .csrf().disable()
+      .formLogin().disable()
+      .httpBasic().disable()
+      .logout().disable();
+*/
 }

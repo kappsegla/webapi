@@ -1,6 +1,7 @@
 package org.fungover.webapi.controllers;
 
 import org.fungover.webapi.entities.Product;
+import org.fungover.webapi.entities.Text;
 import org.fungover.webapi.repositories.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,10 @@ public class HelloController {
     }
 
     @RequestMapping("/greeting")
-    public String greeting(){
-        return "Hello World!";
+    public Text greeting(){
+        var text = new Text();
+        text.setMessage("Hello World!");
+        return text;
     }
 
     @RequestMapping("/bye")
